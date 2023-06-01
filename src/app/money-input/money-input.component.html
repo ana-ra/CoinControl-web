@@ -1,0 +1,14 @@
+<div>
+    <input type="number" [(ngModel)]="moneyAmount" placeholder="Enter amount">
+    <button (click)="trackInput()">Track</button>
+  </div>
+  
+  <div *ngFor="let input of inputDataList">
+    <div>
+      <p>Amount: {{ input.moneyAmount !== null ? (input.moneyAmount | currency:'USD':'symbol') : 'N/A' }}</p>
+      <p>Input Date: {{ input.inputDate | date:'medium' }}</p>
+      <button (click)="updateInput(input)">Update</button>
+      <button (click)="deleteInput(input)">Delete</button>
+    </div>
+  </div>
+  
